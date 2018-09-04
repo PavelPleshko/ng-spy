@@ -1,4 +1,5 @@
 import { isDevMode } from '@angular/core';
+
 export type Speed = 'slower' | 'faster';
 
 export function Spy(){
@@ -7,7 +8,7 @@ export function Spy(){
 	currentExecTime=0,originalFn,
 	lastExecTime=0;
 
-	return function(target,key,descriptor){
+	return function(target,key:string,descriptor){
 		originalFn = descriptor.value.bind(target);
 		let targetName = target.constructor.name;
 		if(isDevMode()){
@@ -39,6 +40,7 @@ export function Spy(){
 		}else{
 			console.error(`You are using Spy decorator in production. Perhaps you forgot to remove it. Please remove it 
 				from function "${key}" on class "${targetName} or function will not be executed."`);
+			originalFn(lastArgs);
 		}
 		return descriptor;
 	}
