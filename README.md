@@ -8,6 +8,7 @@ It logs into browser console information about function execution which is liste
 
 ### How to use it
 Simply import the function into your component and decorate the target function with it. Like so:
+
 	```
 		import {Spy} from 'ngx-spy';
 		@Component({
