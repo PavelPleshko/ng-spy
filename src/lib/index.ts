@@ -3,10 +3,13 @@ import { isDevMode } from '@angular/core';
 export type Speed = 'slower' | 'faster';
 
 export function Spy(){
-	let lastArgs,callTimes=0,
-	avgExecutionTime,totalExecTime=0,
-	currentExecTime=0,originalFn,
-	lastExecTime=0;
+	let lastArgs=null;
+	let callTimes=0;
+	let avgExecutionTime=0;
+	let totalExecTime=0;
+	let currentExecTime=0;
+	let originalFn=null;
+	let lastExecTime=0;
 
 	return function(target,key:string,descriptor){
 		originalFn = descriptor.value.bind(target);

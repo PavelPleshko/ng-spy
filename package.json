@@ -1,6 +1,21 @@
 {
   "name": "ngx-spy",
   "version": "1.0.0",
+  "description": "Angular spy method decorator",
+  "keywords": [
+    "spy decorator",
+    "angular"
+  ],
+  "author": "Pavel Pleshko",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PavelPleshko/ngx-spy"
+  },
+  "bugs": {
+    "url": "https://github.com/PavelPleshko/ngx-spy/issues"
+  },
+  "readme": "https://github.com/PavelPleshko/ngx-spy/blob/master/README.md",
+ 
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
