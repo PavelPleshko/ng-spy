@@ -1,5 +1,8 @@
 ## A simple spy method decorator
 
+### What it does?
+It logs into browser console information about function execution which is listed below
+
 ### Installation
 `npm install --save-dev ngx-spy`
 
