@@ -1,0 +1,2 @@
+export {Spy} from './lib';
+
