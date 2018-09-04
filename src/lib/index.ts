@@ -12,13 +12,13 @@ export function Spy(){
 	let lastExecTime=0;
 
 	return function(target,key:string,descriptor){
-		originalFn = descriptor.value.bind(target);
+		originalFn = descriptor.value;
 		let targetName = target.constructor.name;
 		if(isDevMode()){
 			descriptor.value = function(...args){
 				lastArgs = args;
 				let start = performance.now();
-				originalFn(lastArgs);
+				originalFn.apply(this,lastArgs);
 				let end = performance.now();
 				currentExecTime = end-start;
 				totalExecTime +=currentExecTime;
@@ -43,7 +43,7 @@ export function Spy(){
 		}else{
 			console.error(`You are using Spy decorator in production. Perhaps you forgot to remove it. Please remove it 
 				from function "${key}" on class "${targetName} or function will not be executed."`);
-			originalFn(lastArgs);
+			 originalFn.apply(this,lastArgs);
 		}
 		return descriptor;
 	}
